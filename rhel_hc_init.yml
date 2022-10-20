@@ -1,0 +1,9 @@
+---
+- name: Initialise the RHEL Health Check
+  hosts:
+  roles:
+    - hardware_certification_matrix_check
+  tasks:
+
+
+    
