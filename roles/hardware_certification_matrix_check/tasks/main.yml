@@ -1,0 +1,14 @@
+---
+# tasks file for ./roles/hardware_certification_matrix_check
+
+# Hardware Certification Matrix
+    - name: Find the hardware manufacturer
+      ansible.builtin.shell: dmidecode --type 1
+      register: result_dmi
+
+    # - name: Debug hardware manufacturer info
+    #   ansible.builtin.debug:
+    #     var: "{{ result_dmi }}"
+
+      # compare with https://catalog.redhat.com/platform/red-hat-enterprise-linux/hardware
+      # opportunity to use this? https://github.com/rishabhdas/dmidecode-ansible/blob/master/dmidecode.yaml
