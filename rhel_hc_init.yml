@@ -1,9 +1,13 @@
 ---
 - name: Initialise the RHEL Health Check
-  hosts:
+  hosts: localhost
   roles:
     - hardware_certification_matrix_check
   tasks:
+    - name: Generate the RHEL Health Check Report
+      ansible.builtin.template:
+        src: ./rhel_hc_report.j2
+        dest: /tmp/rhel_hc_report_"{{ ansible_date_time.time }}_{{ ansible_date_time.date }}"
 
 
     

@@ -8,7 +8,10 @@ Hardware
 
 Hardware Certification Matrix
 Investigation: Is the server hardware certified by Red Hat?
-Observation: The hardware information is as follows. {{ result_dmi }}
+Observation:
+  System manufacturer: {{ result_system_manufacturer.stdout_lines }}
+  System product name: {{ result_system_product_name.stdout_lines }}
+  System version: {{ result_system_version.stdout_lines }}
 Guidance: Red Hat recommends running Red Hat Enterprise Linux on hardware that is certified according to Red Hat's hardware certification matrix.
 Rationale: Hardware listed as being certified on Red Hat Enterprise Linux has undergone extensive testing. While Red Hat Enterprise Linux may run on hardware that is not certified, it voids the client's support agreement for that host.
 Recommendation: #TODO#

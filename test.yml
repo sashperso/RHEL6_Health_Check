@@ -1,0 +1,11 @@
+---
+- name: Playbook for testing
+  hosts: localhost
+  tasks:
+    - name: Find the hardware manufacturer
+      ansible.builtin.shell: dmidecode 
+      become: true
+      register: result_dmi
+    - name: Get result
+      ansible.builtin.debug:
+        msg: "{{ result_dmi.System Information }}" 
