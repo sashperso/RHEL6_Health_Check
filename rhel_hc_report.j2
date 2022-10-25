@@ -1,0 +1,14 @@
+RHEL Health Check Report
+
+This is a health check report conducted on a {{ ansible_distribution }} {{ansible_distribution_version }} instance, at {{ ansible_date_time.time }} on {{ ansible_date_time.date }}.
+
+Analysis
+
+Hardware
+
+Hardware Certification Matrix
+Investigation: Is the server hardware certified by Red Hat?
+Observation: The hardware information is as follows. {{ result_dmi }}
+Guidance: Red Hat recommends running Red Hat Enterprise Linux on hardware that is certified according to Red Hat's hardware certification matrix.
+Rationale: Hardware listed as being certified on Red Hat Enterprise Linux has undergone extensive testing. While Red Hat Enterprise Linux may run on hardware that is not certified, it voids the client's support agreement for that host.
+Recommendation: #TODO#
