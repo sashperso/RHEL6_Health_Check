@@ -79,7 +79,7 @@ Tell people where they can go to for help. It can be any combination of an issue
 ## Roadmap
 Milestone 1: Project Started
 Date: 221025
-![Automated RHEL Health Check Product Roadmap]/(images/rhel_hc_product_roadmap.png "Automated RHEL Health Check Product Roadmap")
+![Automated RHEL Health Check Product Roadmap](/images/rhel_hc_product_roadmap.png "Automated RHEL Health Check Product Roadmap")
 
 ## Contributing
 State if you are open to contributions and what your requirements are for accepting them.
