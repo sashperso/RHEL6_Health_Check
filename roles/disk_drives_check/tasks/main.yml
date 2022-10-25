@@ -10,8 +10,9 @@
 #     name: smartmontools
 #     state: present
 
-# - name: Get error logs
-#   ansible.builtin.shell: dmesg -T | grep error
-#   register: result_error_logs
+- name: Find errors in the system log files
+  ansible.builtin.shell: dmesg -T | grep error
+  become: true
+  register: result_error_logs
 
 

@@ -25,7 +25,8 @@ Rationale: Intermittent or complete failure of a network card can impact the ava
 
 Disk Drives
 Investigation: Are read or write errors present in the system log files?
-Observation: #TODO#
+Observation:
+  {{ result_error_logs.stdout | to_nice_yaml }}
 Guidance: Read or write errors in the system log files can indicate a failed or failing hard disk and should be investigated.
 Rationale: Intermitten or complete failure of a disk drive can lead to loss of service or data. Proper backups of system critical data should be verified and tested that they successfully restore to guarantee that the backups are valid.
 
