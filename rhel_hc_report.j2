@@ -22,3 +22,30 @@ Observation:
   {{ result_network_cards.stdout_lines | to_nice_yaml }}
 Guidance: Excessive errors on network cards can indicate a possible hardware or configuration problem with the network card in question and should be investigated.
 Rationale: Intermittent or complete failure of a network card can impact the availability of service on a host.
+
+Disk Drives
+Investigation: Are read or write errors present in the system log files?
+Observation: #TODO#
+Guidance: Read or write errors in the system log files can indicate a failed or failing hard disk and should be investigated.
+Rationale: Intermitten or complete failure of a disk drive can lead to loss of service or data. Proper backups of system critical data should be verified and tested that they successfully restore to guarantee that the backups are valid.
+
+Investigation: Is there any physical indication of a failed disk drive? This could be determined by installing and enabling SMART hard disk monitoring tool.
+Observation: #TODO#
+Guidance: Failed disk drive should be replaced as soon as possible. SMART reporting can also preempt hard disk failures and hence the same should be regularly monitored.
+Rationale: An undetected failed disk drive can result in reduced redundancy when part of a RAID configuration.
+
+Memory
+Investigation: Is there an indication of any memory DIMMs being in a degraded state? This could be determined by some hardware probing tool provided by the vendor/OEM.
+Observation: #TODO#
+Guidance: In the event that the host is not under hardware monitoring, it is recommended that the requisite software be downloaded and installed to ensure that the hardware health status is being monitored. For example, if the host is an IBM or HP server, the following links would provide the corresponding hardware monitoring tools for download.
+IBM Systems Director Plug-ins
+http://www-03.ibm.com/systems/management/director/downloads/plugins.html
+HP System Insight Manager
+http://h18013.www1.hp.com/products/servers/management/hpsim/dl_linux4x.html?jumpid=reg_R1002_USEN
+Rationale: A memory DIMM in a degraded state might not allow optimal OS performance and might ultimately fail, resulting in a kernel panic.
+
+Firmware
+Investigation: Is the latest firmware installed on the host?
+Observation: #TODO#
+Guidance: Whenever possible, try and apply the latest firmware for all hardware components. Depending on the hardware, this can include any or all of the following; BIOS, Fibre cards, SCSI controllers.
+Rationale: The latest firmware for devices contains feature enhancements and bug fixes.
