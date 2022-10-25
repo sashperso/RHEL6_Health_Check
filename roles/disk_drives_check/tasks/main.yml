@@ -1,0 +1,17 @@
+---
+# tasks file for ./roles/disk_drives_check
+
+# - name: Debug all devices
+#   ansible.builtin.debug:
+#     var: hostvars[inventory_hostname].ansible_mounts
+
+# - name: Install S.M.A.R.T.
+#   ansible.builtin.dnf:
+#     name: smartmontools
+#     state: present
+
+# - name: Get error logs
+#   ansible.builtin.shell: dmesg -T | grep error
+#   register: result_error_logs
+
+
