@@ -15,3 +15,10 @@ Observation:
 Guidance: Red Hat recommends running Red Hat Enterprise Linux on hardware that is certified according to Red Hat's hardware certification matrix.
 Rationale: Hardware listed as being certified on Red Hat Enterprise Linux has undergone extensive testing. While Red Hat Enterprise Linux may run on hardware that is not certified, it voids the client's support agreement for that host.
 Recommendation: #TODO#
+
+Network Cards
+Investigation: Are errors present on any network devices?
+Observation:
+  {{ result_network_cards.stdout_lines | to_nice_yaml }}
+Guidance: Excessive errors on network cards can indicate a possible hardware or configuration problem with the network card in question and should be investigated.
+Rationale: Intermittent or complete failure of a network card can impact the availability of service on a host.

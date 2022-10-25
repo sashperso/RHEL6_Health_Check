@@ -2,4 +2,6 @@
 # tasks file for ./roles/network_cards_check
 - name: Find the statistics of all network cards
   ansible.builtin.command: ip -s link
-  register: result_ip_link
+  changed_when: false
+  register: result_network_cards
+
