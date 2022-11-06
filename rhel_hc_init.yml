@@ -5,6 +5,7 @@
     - hardware_certification_matrix_check
     - network_cards_check
     - disk_drives_check
+    - storage_check
   tasks:
     - name: Generate the RHEL Health Check Report
       ansible.builtin.template:
