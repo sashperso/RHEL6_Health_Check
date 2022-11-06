@@ -1,0 +1,11 @@
+---
+# tasks file for roles/storage_check
+- name: Display information about logical volumes
+  ansible.builtin.command: lvdisplay
+  become: true
+  register: result_lvdisplay
+
+- name: Get list of block devices
+  ansible.builtin.command: lsblk
+  become: true
+  register: result_lsblk
