@@ -1,7 +1,11 @@
 # Contributing
-When contributing to this repository, please first discuss the change you wish to make via email with the maintainers of this repository before making a change.
+When contributing to this repository, please request to join the Kanban board (link below).
+Once a member of the Kanban board, you can pick a task in the backlog and assign it to yourself.
+Once you assign it to yourself, move the task card to "To-Do".
+Once you start working on the task, move the task to "Doing", and utilise the comments feature in the Activity section to keep the team updated.
+Once you have completed your work for the task, move the card into "Code Review".
 
-## Kanban board
+# Kanban board
 Request to join the following Kanban board in order to see what work is in progress, and what work is to be done.
 https://trello.com/invite/b/J2YaJ2tb/ATTI6f43b48e0e371e2c487744db410bb506BE74376C/rhel-hc
 
