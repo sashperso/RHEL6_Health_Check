@@ -63,12 +63,12 @@ Storage Configuration
 
 Logical Volume Manager (LVM)
 Investigation: Are mounted file systems using LVM?
-Observation: {{ result_lvdisplay | to_nice_yaml }}
+Observation: {{ result_lvdisplay.stdout | to_nice_yaml }}
 Guidance: #TODO#
 Rationale: #TODO#
 
 File System Layout
 Investigation: Is the filesystem layout setup correctly?
-Observation: {{ result_lsblk | to_nice_yaml }}
+Observation: {{ result_lsblk.stdout | to_nice_yaml }}
 Guidance: #TODO#
 Rationale: #TODO#
