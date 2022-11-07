@@ -30,7 +30,7 @@ git clone <url>
 ```
 
 ## Make a new branch
-When working with others on a project in GitLab, you may need to use the features of git to enable effective teamwork. One big feature of GitLab is branches which allows members to create a seperate instance of the code to edit. Most commonly, this feature is used to develop new features. For the purposes of this project, each health check item is a feature, and therefore new branches will be names after the health check item name.
+When working with others on a project in GitLab, you may need to use the features of git to enable effective teamwork. One big feature of GitLab is branches which allows members to create a separate instance of the code to edit. Most commonly, this feature is used to develop new features. For the purposes of this project, each health check item is a feature, and therefore new branches will be names after the health check item name.
 
 ```
 git branch <feature_name>
