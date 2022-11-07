@@ -36,6 +36,16 @@ When working with others on a project in GitLab, you may need to use the feature
 git branch <feature_name>
 ```
 
+## Push a change
+Pushing a change means updating the remote repository with your local changes. The reasons why a developer would do this is to save their work incrementally which is a leading practice. It could also be to update a repository so that you can make a merge request.
+
+```
+git status
+git add <file_to_add>
+git commit -m '<descriptive_message_about_change>
+git push --set-upstream origin <branch_name>
+```
+
 ## Pull changes
 Sometimes, you will need to pull changes from the remote repository. E.g. a merge request has been approved. This means that changes that were made into a feature branch have been added to the main branch.
 
