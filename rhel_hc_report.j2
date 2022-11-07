@@ -51,6 +51,14 @@ Observation: #TODO#
 Guidance: Whenever possible, try and apply the latest firmware for all hardware components. Depending on the hardware, this can include any or all of the following; BIOS, Fibre cards, SCSI controllers.
 Rationale: The latest firmware for devices contains feature enhancements and bug fixes.
 
+Software
+
+RHEL Version
+Investigation: What version of Red Hat Enterprise Linux is installed?
+Observation: {{ result_osrelease.stdout_lines[6] | to_nice_yaml }}
+Guidance: Red Hat recommends that a host be patched to the latest update of Red Hat Enterprise Linux as part of a regular patch management cycle.
+Rationale: Applying the latest updates ensures that a host is updated for previous bug fixes and security vulnerabilities.
+
 Storage Configuration
 
 Logical Volume Manager (LVM)
