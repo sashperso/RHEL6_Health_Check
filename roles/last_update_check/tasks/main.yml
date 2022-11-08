@@ -1,0 +1,5 @@
+---
+# tasks file for ./roles/last_update_check
+- name: Check the last update
+  ansible.builtin.command: yum history
+  register: result_last_update
