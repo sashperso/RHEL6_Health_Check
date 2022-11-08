@@ -65,6 +65,13 @@ Observation: {{ result_last_update.stdout | to_nice_yaml }}
 Guidance: Red Hat recommends that hosts be patched to the latest update of Red Hat Enterprise Linux as part of a regular patch management cycle.
 Rationale: Applying the latest updates ensures that a host is updated for previous bug fixes and security vulnerabilities.
 
+Installed RPMs
+Investigation: How many packages are installed on the system and are there any unnecessary RPMs installed? How many have been altered?
+Observation: 
+ - There are {{ result_rpm_count.stdout }} packages installed on this system.
+Guidance: #TODO#
+Rationale: Each piece of software on the server could possibly contain a vulnerability. A package can always be added later if it is needed.
+
 Storage Configuration
 
 Logical Volume Manager (LVM)

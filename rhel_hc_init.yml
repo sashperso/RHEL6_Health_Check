@@ -10,6 +10,7 @@
     - last_update_check
     - password_policy
     - selinux_check
+    - installed_rpm_check
   tasks:
     - name: Generate the RHEL Health Check Report
       ansible.builtin.template:
