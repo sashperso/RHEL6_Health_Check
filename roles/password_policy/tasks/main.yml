@@ -1,0 +1,5 @@
+---
+# tasks file for password_policy
+- name: Check the local password policy
+  ansible.builtin.command: grep -E '^PASS_' /etc/login.defs
+  register: result_password_policy
