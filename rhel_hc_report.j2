@@ -86,3 +86,11 @@ Investigation: What are the password policies on the systems?
 Observation: {{ result_password_policy.stdout_lines | to_nice_yaml }}
 Guidance #TODO#
 Rationale: Password Policies are company defined standards, the system should adhere to this.
+
+Security
+
+SELinux
+Investigation: Is SELinux enabled and enforced?
+Observation: {{ result_SELinux.stdout | to_nice_yaml }}
+Guidance: #TODO#
+Rationale: SELinux provides a greater level of protection to a host than just one relying on simple Discretionary Access Control (DAC). It uses Mandatory Access Control (MAC). Permissive just logs the actions but allows them to happen. Enforcing is the recommended solution as it completely blocks the actions and logs them.
