@@ -5,5 +5,5 @@
   register: result_rpm_count
 
 - name: List RPMs that have been altered since installation. *This might take a while*
-  ansible.builtin.shell: rpm -qVa
+  ansible.builtin.shell: rpm -qVa | grep -v missing
   register: result_rpm_altered
