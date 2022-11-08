@@ -8,6 +8,7 @@
     - storage_check
     - rhel_version_check
     - last_update_check
+    - password_policy
   tasks:
     - name: Generate the RHEL Health Check Report
       ansible.builtin.template:

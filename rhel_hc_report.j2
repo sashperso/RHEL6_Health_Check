@@ -78,3 +78,11 @@ Investigation: Is the filesystem layout setup correctly?
 Observation: {{ result_lsblk.stdout | to_nice_yaml }}
 Guidance: #TODO#
 Rationale: #TODO#
+
+User Access
+
+Password Policy
+Investigation: What are the password policies on the systems?
+Observation: {{ result_password_policy.stdout_lines | to_nice_yaml }}
+Guidance #TODO#
+Rationale: Password Policies are company defined standards, the system should adhere to this.
