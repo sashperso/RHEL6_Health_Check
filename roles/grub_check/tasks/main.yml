@@ -1,0 +1,11 @@
+---
+# tasks file for grub_check
+- name: Retrieve default kernel specified in grub configuration file
+  ansible.builtin.shell: grubby --default-kernel
+  become: true
+  register: result_default_kernel
+
+- name: Check current running kernel
+  ansible.builtin.shell: cat /proc/version
+  become: true
+  register: result_running_kernel

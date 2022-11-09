@@ -95,6 +95,16 @@ Observation: {{ result_password_policy.stdout_lines | to_nice_yaml }}
 Guidance #TODO#
 Rationale: Password Policies are company defined standards, the system should adhere to this.
 
+Kernel
+
+Grub
+Investigation: Is the current running kernel set to the default in /etc/grub.conf? Is the correct kernel set to default in /etc/grub.conf? If a different kernel was set, was this done intentionally due to any software incompatibility issues?
+Observation: 
+- The current running kernel version on this machine is {{ result_running_kernel.stdout_lines }}
+- The default kernel version for this machine is {{ result_default_kernel.stdout_lines }}
+Guidance: Serveral kernel versions should be kept to make sure the system stays bootable in the event that a software update breaks the boot process.
+Rationale: An incorrect kernel set to default in /etc/grub.conf will not load the necessary kernel modules on next reboot.
+
 Security
 
 SELinux
