@@ -1,0 +1,11 @@
+---
+# tasks file for ./roles/kernel_issues_check
+- name: Check if the running kernel is tainted by a third party driver.
+  become: true
+  ansible.builtin.command: cat /proc/sys/kernel/tainted
+  register: result_tainted_kernel_proc
+
+- name: Check kernel logs for mentions of kernel taining
+  become: true
+  ansible.builtin.shell: journalctl -k | grep taint
+  register: result_tainted_kernel_journal
