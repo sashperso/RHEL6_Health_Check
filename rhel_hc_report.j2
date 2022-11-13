@@ -91,7 +91,8 @@ User Access
 
 Password Policy
 Investigation: What are the password policies on the systems?
-Observation: {{ result_password_policy.stdout_lines | to_nice_yaml }}
+Observation: 
+{{ result_password_policy.stdout_lines | to_nice_yaml }}
 Guidance #TODO#
 Rationale: Password Policies are company defined standards, the system should adhere to this.
 
@@ -108,7 +109,8 @@ Rationale: An incorrect kernel set to default in /etc/grub.conf will not load th
 Kernel issues
 Investigation: Is the running kernel tainted by a third party driver?
 Observation: /proc/sys/kernel/tainted has returned a value of {{result_tainted_kernel_proc.stdout | to_nice_yaml }}
-Journalctl mentions kernel tainting in these entries: {{ result_tainted_kernel_journal.stdout | to_nice_yaml }}
+Journalctl mentions kernel tainting in these entries: 
+{{ result_tainted_kernel_journal.stdout | to_nice_yaml }}
 Guidance: The use of third party drivers that taint the kernel should be avoided if possible. There are often times when third party drivers are required for performance of graphic, and third-party applications. For example, clearcase, EMC PowerPath, and high performance graphic drivers.
 In these cases, the third party provider should be contacted to assess any risk involved with an upgrade, and if this will affect the supportability of the product.
 Rationale: In order to upgrade a tainted kernel of a host, it is first necessary to update the kernel then boot into the new kernel before updating or reinstalling the driver that taints the kernel. This usually requires a second boot sequence.
@@ -120,3 +122,15 @@ Investigation: Is SELinux enabled and enforced?
 Observation: {{ result_SELinux.stdout | to_nice_yaml }}
 Guidance: #TODO#
 Rationale: SELinux provides a greater level of protection to a host than just one relying on simple Discretionary Access Control (DAC). It uses Mandatory Access Control (MAC). Permissive just logs the actions but allows them to happen. Enforcing is the recommended solution as it completely blocks the actions and logs them.
+
+Firewalling
+Investigation: Is there a local firewall active on the hosts?
+Observation: 
+{% if result_firewall.failed == false %}
+Firewall is enabled: {{ result_firewall_success.stdout | to_nice_yaml }}
+{% else %}
+{{ result_firewall_failed.stdout | to_nice_yaml }}
+{% endif %}
+Guidance: firewallD should be running and be configured to restrict the incoming network traffic to the expected licit flows.
+Rationale: Dropping any traffic that is not expected/documented for the workload of the machine is helping provide a high level of security.
+
