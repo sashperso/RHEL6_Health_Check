@@ -69,7 +69,7 @@ Installed RPMs
 Investigation: How many packages are installed on the system and are there any unnecessary RPMs installed? How many have been altered?
 Observation: There are {{ result_rpm_count.stdout }} packages installed on this system.
 The following RPMs have been altered since installation.
-{{ result_rpm_altered | to_nice_yaml }}
+{{ result_rpm_altered.stdout_lines | to_nice_yaml }}
 Guidance: #TODO#
 Rationale: Each piece of software on the server could possibly contain a vulnerability. A package can always be added later if it is needed.
 

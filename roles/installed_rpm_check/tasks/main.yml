@@ -2,8 +2,10 @@
 # tasks file for ./roles/installed_rpm_check
 - name: Count the number of locally installed RPM packages. *This might take a while*
   ansible.builtin.shell: rpm -Va | wc -l
+  become: true
   register: result_rpm_count
 
 - name: List RPMs that have been altered since installation. *This might take a while*
   ansible.builtin.shell: rpm -qVa | grep -v missing
+  become: true
   register: result_rpm_altered
