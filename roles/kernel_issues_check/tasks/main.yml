@@ -5,7 +5,7 @@
   ansible.builtin.command: cat /proc/sys/kernel/tainted
   register: result_tainted_kernel_proc
 
-- name: Check kernel logs for mentions of kernel taining
+- name: Check kernel logs for mentions of kernel tainting
   become: true
   ansible.builtin.shell: journalctl -k | grep taint
   register: result_tainted_kernel_journal
