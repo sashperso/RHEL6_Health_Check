@@ -12,6 +12,7 @@
     - selinux_check
     - installed_rpm_check
     - grub_check
+    - kernel_issues_check
   tasks:
     - name: Generate the RHEL Health Check Report
       ansible.builtin.template:
