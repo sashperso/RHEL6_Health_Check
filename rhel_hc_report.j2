@@ -134,3 +134,9 @@ Firewall is enabled: {{ result_firewall_success.stdout | to_nice_yaml }}
 Guidance: firewallD should be running and be configured to restrict the incoming network traffic to the expected licit flows.
 Rationale: Dropping any traffic that is not expected/documented for the workload of the machine is helping provide a high level of security.
 
+Running Services
+
+Investigation: Is there any service failing to start?
+Observation: 
+{{ result_failed_services.stdout | to_nice_yaml }}
+Rationale: A service unable to start should be fixed. If it's not needed, it should be removed.
