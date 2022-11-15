@@ -1,0 +1,7 @@
+---
+# tasks file for ./roles/io_scheduler_check
+- name: Identify current tuned-adm profile
+  become: true
+  ansible.builtin.command: tuned-adm active
+  register: result_tuned_adm_profile
+
