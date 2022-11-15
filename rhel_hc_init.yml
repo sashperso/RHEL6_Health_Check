@@ -14,7 +14,7 @@
     - grub_check
     - kernel_issues_check
     - firewall_check
-    - failed_services_check
+    - running_services_check
   tasks:
     - name: Generate the RHEL Health Check Report
       ansible.builtin.template:
