@@ -115,6 +115,11 @@ Guidance: The use of third party drivers that taint the kernel should be avoided
 In these cases, the third party provider should be contacted to assess any risk involved with an upgrade, and if this will affect the supportability of the product.
 Rationale: In order to upgrade a tainted kernel of a host, it is first necessary to update the kernel then boot into the new kernel before updating or reinstalling the driver that taints the kernel. This usually requires a second boot sequence.
 
+I/O Scheduler
+Investigation: Is the I/O scheduler used the correct one for the workload?
+Observation: The current active tuned-adm profile is {{ result_tuned_adm_profile.stdout | to_nice_yaml }}. 
+Rationale: The disk scheduler should be chosen for the type of workload running on the machine, getting the best performance out of disks access.
+
 Security
 
 SELinux
