@@ -143,5 +143,5 @@ Running Services
 
 Investigation: Is there any service failing to start?
 Observation: 
-{{ result_failed_services.stdout | to_nice_yaml }}
+{{ result_running_services.stdout | to_nice_yaml }}
 Rationale: A service unable to start should be fixed. If it's not needed, it should be removed.

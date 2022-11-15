@@ -1,5 +1,0 @@
----
-# tasks file for .roles/failed_services_check
-- name: Check for failed services
-  ansible.builtin.command: systemctl --state=failed
-  register: result_failed_services
