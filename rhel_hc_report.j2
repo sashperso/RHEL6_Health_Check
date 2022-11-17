@@ -117,7 +117,7 @@ Rationale: In order to upgrade a tainted kernel of a host, it is first necessary
 
 I/O Scheduler
 Investigation: Is the I/O scheduler used the correct one for the workload?
-Observation: The current active tuned-adm profile is {{ result_tuned_adm_profile.stdout | to_nice_yaml }}. 
+Observation: {{ result_tuned_adm_profile.stdout | to_nice_yaml }}. 
 Rationale: The disk scheduler should be chosen for the type of workload running on the machine, getting the best performance out of disks access.
 
 Security
@@ -140,8 +140,13 @@ Guidance: firewallD should be running and be configured to restrict the incoming
 Rationale: Dropping any traffic that is not expected/documented for the workload of the machine is helping provide a high level of security.
 
 Running Services
-
 Investigation: Is there any service failing to start?
 Observation: 
 {{ result_running_services.stdout | to_nice_yaml }}
 Rationale: A service unable to start should be fixed. If it's not needed, it should be removed.
+
+Failed Services
+Investigation: Does any service write errors in the log files?
+Observation:
+{{ result_failed_services.stdout | to_nice_yaml }}
+Rationale: Errors reported in log files by services should be investigated. If not due to downtime or maintenance of another service, issue should be fixed.
