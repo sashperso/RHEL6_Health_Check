@@ -1,0 +1,11 @@
+---
+# tasks file for .roles/teaming_check
+- name: Describe network device status
+  become: true
+  ansible.builtin.command: nmcli device status
+  register: result_device_status
+
+- name: Describe network connections
+  become: true
+  ansible.builtin.command: nmcli conn show
+  register: result_network_connections
