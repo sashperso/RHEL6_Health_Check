@@ -2,10 +2,10 @@
 # tasks file for .roles/teaming_check
 - name: Describe network device status
   become: true
-  ansible.builtin.command: nmcli device status
+  ansible.builtin.command: ifconfig -a
   register: result_device_status
 
-- name: Describe network connections
+- name: Verify current bonding mode
   become: true
-  ansible.builtin.command: nmcli conn show
-  register: result_network_connections
+  ansible.builtin.command: cat /sys/class/net/bond0/bonding/mode
+  register: result_bonding_mode
