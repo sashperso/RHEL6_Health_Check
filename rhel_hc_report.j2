@@ -119,8 +119,6 @@ Rationale: An incorrect kernel set to default in /etc/grub.conf will not load th
 Kernel issues
 Investigation: Is the running kernel tainted by a third party driver?
 Observation: /proc/sys/kernel/tainted has returned a value of {{result_tainted_kernel_proc.stdout | to_nice_yaml }}
-Journalctl mentions kernel tainting in these entries: 
-{{ result_tainted_kernel_journal.stdout | to_nice_yaml }}
 Guidance: The use of third party drivers that taint the kernel should be avoided if possible. There are often times when third party drivers are required for performance of graphic, and third-party applications. For example, clearcase, EMC PowerPath, and high performance graphic drivers.
 In these cases, the third party provider should be contacted to assess any risk involved with an upgrade, and if this will affect the supportability of the product.
 Rationale: In order to upgrade a tainted kernel of a host, it is first necessary to update the kernel then boot into the new kernel before updating or reinstalling the driver that taints the kernel. This usually requires a second boot sequence.

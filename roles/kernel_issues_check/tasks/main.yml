@@ -4,4 +4,3 @@
   become: true
   ansible.builtin.command: cat /proc/sys/kernel/tainted
   register: result_tainted_kernel_proc
-
