@@ -2,5 +2,5 @@
 # tasks file for ./roles/failed_services_check
 - name: Collect any error or failed messages registered in the last day
   become: true
-  ansible.builtin.shell: journalctl --since "1 day ago" | grep error | grep failed
+  ansible.builtin.shell: service --status-all | grep -v running
   register: result_failed_services
