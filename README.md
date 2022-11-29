@@ -1,13 +1,13 @@
-# rhel
+# rhel6_health_check
 
-The goal of this project is to automate a RHEL health check. This allows a consultant more time for analysis and recommendations, rather than conducting information gathering activities.
+The goal of this project is to automate a RHEL6 health check, and is an expansion from the rhel_health_check_crew's initial playbook to automate a RHEL8 health check. This allows a consultant more time for analysis and recommendations, rather than conducting information gathering activities.
 
 ## Name
-Automated RHEL Health Check
+Automated RHEL6 Health Check
 
 ## Description
-This project uses Ansible to automate certain components of a RHEL health check.
-An existing RHEL health check template can be found here:
+This project uses Ansible to automate certain components of a RHEL6 health check.
+An existing RHEL6 health check template can be found here:
 https://gitlab.consulting.redhat.com/customer-success/consulting-engagement-reports/cer-template/-/blob/master/canned-content/en_US/RHEL-HC/implementation.adoc
 
 ### Strengths
