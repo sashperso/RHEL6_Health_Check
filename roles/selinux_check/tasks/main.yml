@@ -1,5 +1,5 @@
 ---
 # tasks file for ./roles/selinux_check
 - name: Check whether SELinux is enabled and enforced
-  ansible.builtin.shell: cat /usr/sbin/getenforce
+  ansible.builtin.shell: sestatus | grep "Current mode:"
   register: result_SELinux
