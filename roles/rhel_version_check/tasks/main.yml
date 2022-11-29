@@ -1,5 +1,5 @@
 ---
 # tasks file for ./roles/rhel_version_check
-- name: Check the version of RHEL
-  ansible.builtin.command: cat /etc/os-release
+- name: Check the version of RHEL6
+  ansible.builtin.command: uname -a
   register: result_osrelease

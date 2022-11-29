@@ -1,5 +1,5 @@
 ---
-- name: Initialise the RHEL Health Check
+- name: Initialise the RHEL Health Check for the RHEL6 hosts
   hosts: localhost
   roles:
     - hardware_certification_matrix_check
@@ -18,8 +18,9 @@
     - io_scheduler_check
     - failed_services_check
     - teaming_check
+    - speed_and_duplex_check
   tasks:
-    - name: Generate the RHEL Health Check Report
+    - name: Generate the RHEL6 Health Check Report
       ansible.builtin.template:
         src: ./rhel_hc_report.j2
         dest: /tmp/rhel_hc_report_"{{ ansible_date_time.time }}_{{ ansible_date_time.date }}"

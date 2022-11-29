@@ -1,4 +1,4 @@
-RHEL Health Check Report
+RHEL6 Health Check Report
 
 This is a health check report conducted on a {{ ansible_distribution }} {{ansible_distribution_version }} instance, at {{ ansible_date_time.time }} on {{ ansible_date_time.date }}.
 
@@ -88,6 +88,12 @@ Guidance: #TODO#
 Rationale: #TODO#
 
 Network Configuration
+
+Speed and Duplex
+Investigation: Are network adapters performing in the best way possible?
+Observation: {{ test_var }}
+Guidance: Network interfaces should be conigured to auto-negotiate to guarantee that they are running at the maximum speed and duplex setting advertised by the switch. Interfaces running at a suboptimal speed/duplex setting that are mismatched with the switch can result in seriod performance issues.
+Rationale: Interfaces running at a suboptimal speed/duplex setting or that are mismatched with the switch can result in serious performance issues.
 
 Teaming
 Investigation: Is there a teaming or bonding setup, and is this correctly defined?
