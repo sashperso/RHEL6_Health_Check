@@ -1,5 +1,5 @@
 ---
 # tasks file for .roles/running_services_check
 - name: Check for services failing to start
-  ansible.builtin.command: systemctl --state=failed
+  ansible.builtin.shell: service --status-all | grep -v running
   register: result_running_services
